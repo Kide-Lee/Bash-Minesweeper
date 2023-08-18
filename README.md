@@ -1,4 +1,3 @@
-# Bash-Minesweeper
 > A simple command-line game by bash, that can be run in Linux.</br>
 > 一款用bash写的命令行小游戏，可以在Linux系统中运行。
 
@@ -8,11 +7,6 @@
 由于脚本最初是作为博文发表的，因此在脚本源代码中，我加入了自认为非常详尽的注释。列位想要了解脚本运行逻辑或自定义想要的功能的话，欢迎直接阅读我写的[源代码](https://github.com/Kide-Lee/Bash-Minesweeper/blob/main/mine.sh)。
 
 本项目首发于：https://www.cnblogs.com/-zyyz-/p/17635907.html
-
-## 启动脚本
-1. 将项目中的 mine.sh 下载到你的Linux电脑中；
-2. 打开命令行，使用 cd 命令跳到 mine.sh 所在的位置；
-3. 执行`bash mine.sh`命令。
 
 ## 怎么玩
 载入脚本后，用WASD键控制光标移动，按空格挖开地块，挖到的数字是地块周围的地雷数量，挖到地雷后游戏失败；
