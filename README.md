@@ -4,7 +4,7 @@
 ## 前言
 不知道为什么，这个脚本和CentOS 7不兼容。
 
-由于脚本最初是作为博文发表的，因此在脚本源代码中，我加入了自认为非常详尽的注释。列位想要了解脚本运行逻辑或自定义想要的功能的话，欢迎直接阅读我写的[源代码](https://github.com/Kide-Lee/Bash-Minesweeper/blob/main/mine.sh)。
+由于这个**扫雷**小游戏最初是作为博文发表的，因此在脚本源代码中，我加入了自认为非常详尽的注释。列位想要了解脚本运行逻辑或自定义想要的功能的话，欢迎直接阅读我写的[源代码](https://github.com/Kide-Lee/Bash-Minesweeper/blob/main/mine.sh)。
 
 本项目首发于：https://www.cnblogs.com/-zyyz-/p/17635907.html
 
