@@ -417,9 +417,9 @@ function ClearGame() {
     # 将标记正确的格子数量mineSweeper初始化为0。
     mineSweeper=0
     if [ $result == 1 ]; then    #若退出游戏
-        for ((i = 0; i < ${#matrix[@]}; i++)); do
+        for ((i = 0; i < $size; i++)); do
             x=$(("$i" % "$width"))
-            y=$(("$i" / "$height"))
+            y=$(("$i" / "$width"))
             if [ "${matrix[$i]}" == 9 ]; then
                 # 将标记正确的格子染成绿色，并计数。
                 if [ "${field[$i]}" == 11 ]; then
@@ -437,9 +437,9 @@ function ClearGame() {
         done
         clearInfo="Game Exited.\nYou swept $mineSweeper mines in $time seconds."
     elif [ $result == 2 ]; then    # 若输掉游戏
-        for ((i = 0; i < ${#matrix[@]}; i++)); do
+        for ((i = 0; i < $size; i++)); do
             x=$(("$i" % "$width"))
-            y=$(("$i" / "$height"))
+            y=$(("$i" / "$width"))
             if [ "${matrix[$i]}" == 9 ]; then
                 # 将标记正确的格子染成绿色，并去掉方括号以示地雷已爆炸，同时计数。
                 if [ "${field[$i]}" == 11 ]; then
