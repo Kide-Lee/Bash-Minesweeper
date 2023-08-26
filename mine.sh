@@ -409,8 +409,15 @@ function ClearGame() {
     endTime=$(date +%s)
     if [ "$startTime" ]; then
         time=$(("$endTime" - "$startTime"))
+        hours=$(( time / 3600 ))
+        if [ $hours == 0 ]; then hours=; else hours="$hours hours "; fi
+        minutes=$(( (time % 3600) / 60 ))
+        if [ $minutes == 0 ]; then minutes=; else minutes="$minutes minutes "; fi
+        seconds=$(( time % 60 ))
+        if [ $seconds == 0 ]; then seconds=; else seconds="$seconds seconds"; fi
+        time="$hours$minutes$seconds"
     else
-        time=0
+        time="0 seconds"
     fi
     # 清除焦点
     Draw $X $Y
@@ -435,7 +442,7 @@ function ClearGame() {
                 fi
             fi
         done
-        clearInfo="Game Exited.\nYou swept $mineSweeper mines in $time seconds."
+        clearInfo="Game Exited.\nYou swept $mineSweeper mines in $time."
     elif [ $result == 2 ]; then    # 若输掉游戏
         for ((i = 0; i < $size; i++)); do
             x=$(("$i" % "$width"))
@@ -455,9 +462,9 @@ function ClearGame() {
                 fi
             fi
         done
-        clearInfo="$(tput setaf 1)The Game Failed. \nYou swept $mineSweeper mines in $time seconds."
+        clearInfo="$(tput setaf 1)The Game Failed. \nYou swept $mineSweeper mines in $time."
     elif [ $result == 3 ]; then    # 若赢得游戏
-        clearInfo="$(tput setaf 2)You Win!\nYou swept all mines in $time seconds."
+        clearInfo="$(tput setaf 2)You Win!\nYou swept all mines in $time."
     fi
     # 输出结语,并恢复光标。
     tput cnorm
